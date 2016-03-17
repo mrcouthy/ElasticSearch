@@ -1,11 +1,17 @@
 GET /_cat/indices
-
-GET /_mapping
-
+DELETE my_blog
 POST /my_blog
 {
+    "settings": {
+        "index":{
+            "number_of_shards":5
+        }    
+    }, 
     "mappings": {
         "post":{
+            "_source":{
+            "enabled":false
+            },
             "properties": {
             "user_id":{
                 "type":"integer"
@@ -15,11 +21,13 @@ POST /my_blog
             },
             "post_date":{
                 "type": "date"
+                , "format": "YYYY-MM-DD"
             }
         }
     }
 }
 }
+
 
 GET my_blog/_mapping
 
@@ -50,3 +58,4 @@ POST my_blog/post/1
 GET my_blog/post/1
 
 DELETE  my_blog
+ 
