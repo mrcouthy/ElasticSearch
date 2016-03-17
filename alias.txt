@@ -38,3 +38,28 @@ POST evenlog-2015/event
 {
     "error":"Another thing bleu up in 2015"
 }
+
+
+POST _aliases
+{
+    "actions": [
+       {
+          "add": {
+             "index": "evenlog-2014",
+             "alias": "eventlog"
+          }
+       }
+    ]
+}
+
+POST _aliases
+{
+    "actions": [
+       {
+          "add": {
+             "index": "evenlog-2015",
+             "alias": "eventlog"
+          }
+       }
+    ]
+}
