@@ -30,3 +30,11 @@ POST my_blog/post
     "user_id":1
 }
 
+POST my_blog/post
+{
+    "post_date":"2014-08-28",
+    "post_text":"This is another real blog post!",
+    "user_id":1
+}
+
+GET my_blog/post/_search
