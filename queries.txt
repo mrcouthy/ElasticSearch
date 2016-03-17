@@ -6,10 +6,12 @@ POST /my_blog
         "post":{
             "properties": {
             "user_id":{
-                "type":"integer"
+                "type":"integer",
+                "index": "not_analyzed"
             },
             "post_text":{
-                "type": "string"
+                "type": "string",
+                "analyzer": "whitespace"
             },
             "post_date":{
                 "type": "date"
@@ -22,7 +24,6 @@ POST /my_blog
     }
 }
 }
-
 POST my_blog/post
 {
     "post_text":"yet another blog post",
@@ -114,3 +115,38 @@ GET my_blog/_search
         }
     }
 }
+
+GET my_blog/_search 
+{
+    "query": {
+            "match": {
+               "post_text": "blog"
+             }
+            },
+            "aggs":{
+                "noofwords": {
+                    "terms": {
+                        "field":"post_text"
+                    }
+                }
+            }
+        }
+		
+GET my_blog/_search 
+{
+    "query": {
+            "match": {
+               "post_text": "blog"
+             }
+            },
+            "aggs":{
+                "avg_cnt": {
+                    "avg": {
+                        "field":"post_word_count"
+                    }
+                }
+        }
+ }
+
+
+
