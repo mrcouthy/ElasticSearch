@@ -1,0 +1,39 @@
+ 
+
+POST /dhiraj
+{
+    "mappings": {
+        "datas":{
+            "properties": {
+                "post_name":{
+                    "type":"string"
+            }
+    }
+    
+}
+    }
+    
+}
+
+DELETE  dhiraj
+
+POST dhriaj/datas
+{
+    "post_name":"this is a string" 
+}
+
+POST dhriaj/datas
+{
+    "post_name":"this is another string" 
+}
+
+GET dhiraj/post/_search?q=post_name:string
+
+GET dhiraj/datas/_search
+
+
+
+
+GET /_cat/indices
+
+GET dhiraj/_mapping
