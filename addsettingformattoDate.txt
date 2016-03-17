@@ -1,0 +1,28 @@
+GET /_cat/indices
+
+POST /my_blog
+{
+    "settings": {
+        "index":{
+            "number_of_shards":5
+        }    
+    }, 
+    "mappings": {
+        "post":{
+            "properties": {
+            "user_id":{
+                "type":"integer"
+            },
+            "post_text":{
+                "type": "string"
+            },
+            "post_date":{
+                "type": "date"
+                , "format": "YYYY-MM-DD"
+            }
+        }
+    }
+}
+}
+
+GET my_blog/_mapping
