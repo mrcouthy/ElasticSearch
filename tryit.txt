@@ -48,3 +48,5 @@ POST my_blog/post/1
 }
 
 GET my_blog/post/1
+
+DELETE  my_blog
