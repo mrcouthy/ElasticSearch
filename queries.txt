@@ -50,3 +50,12 @@ GET my_blog/_search
         }
     }
 }
+
+GET my_blog/_search 
+{
+    "query":{
+        "match_phrase":{
+            "post_text" : "new blog"
+        }
+    }
+}
