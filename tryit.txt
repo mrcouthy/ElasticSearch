@@ -38,3 +38,11 @@ POST my_blog/post
 }
 
 GET my_blog/post/_search
+
+
+POST my_blog/post/1
+{
+    "post_date":"2014-08-28",
+    "post_text":"This is real blog post with id = 1 !",
+    "user_id":1
+}
