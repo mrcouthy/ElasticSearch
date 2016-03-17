@@ -63,3 +63,5 @@ POST _aliases
        }
     ]
 }
+
+GET eventlog/_search
