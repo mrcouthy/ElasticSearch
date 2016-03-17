@@ -1,0 +1,40 @@
+POST /eventlog-2014
+{
+    "mappings": {
+        "event":{
+            "properties": {
+                "error":{
+                    "type":"string"
+            }
+    }
+}}}
+
+POST /eventlog-2015
+{
+    "mappings": {
+        "event":{
+            "properties": {
+                "error":{
+                    "type":"string"
+            }
+    }
+}}}
+
+POST evenlog-2014/event
+{
+    "error":"A thing bleu up"
+}
+POST evenlog-2014/event
+{
+    "error":"Another thing bleu up"
+}
+
+POST evenlog-2015/event
+{
+    "error":"A thing bleu up in 2015"
+}
+
+POST evenlog-2015/event
+{
+    "error":"Another thing bleu up in 2015"
+}
