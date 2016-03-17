@@ -41,3 +41,12 @@ POST my_blog/post
 
 
 GET my_blog/post/_search?q=blog
+
+GET my_blog/_search 
+{
+    "query":{
+        "match":{
+            "post_text" : "is"
+        }
+    }
+}
