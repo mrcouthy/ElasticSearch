@@ -59,3 +59,23 @@ GET my_blog/_search
         }
     }
 }
+
+
+GET my_blog/_search 
+{
+    "query": {
+        "filtered": {
+           "filter": {
+               "range": {
+                  "post_date": {
+                     "gt": "2015-10-12"
+                  }
+               }
+        }, 
+    "query":{
+        "match":{
+            "post_text" : "blog"
+        }
+    }
+}
+}}
