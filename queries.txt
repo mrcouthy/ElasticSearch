@@ -1,0 +1,32 @@
+GET /_cat/indices
+DELETE my_blog
+POST /my_blog
+{
+    "mappings": {
+        "post":{
+            "properties": {
+            "user_id":{
+                "type":"integer"
+            },
+            "post_text":{
+                "type": "string"
+            },
+            "post_date":{
+                "type": "date"
+                , "format": "YYYY-MM-DD"
+            },
+			"post_word_count":{
+			"type":"integer"
+			}
+        }
+    }
+}
+}
+
+POST my_blog/post
+{
+    "post_text":"yet another blog post",
+    "user_id":1,
+    "post_date":"2014-01-22",
+    "post_word_count":4
+}
