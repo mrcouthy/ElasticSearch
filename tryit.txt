@@ -46,3 +46,5 @@ POST my_blog/post/1
     "post_text":"This is real blog post with id = 1 !",
     "user_id":1
 }
+
+GET my_blog/post/1
