@@ -1,3 +1,22 @@
 GET /_cat/indices
 
 GET /_mapping
+
+POST /my_blog
+{
+    "mappings": {
+        "post":{
+            "properties": {
+            "user_id":{
+                "type":"integer"
+            },
+            "post_text":{
+                "type": "string"
+            },
+            "post_date":{
+                "type": "date"
+            }
+        }
+    }
+}
+}
