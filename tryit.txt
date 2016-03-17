@@ -20,3 +20,5 @@ POST /my_blog
     }
 }
 }
+
+GET my_blog/_mapping
