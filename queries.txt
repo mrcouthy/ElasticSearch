@@ -97,3 +97,20 @@ GET my_blog/_search
         }
     }
 }
+
+GET my_blog/_search 
+{
+    "query": {
+            "match": {
+               "post_text": "blog"
+             }
+            },
+            "highlight":{
+                "fields": {
+                    "post_text":{}
+                }
+                
+            }
+        }
+    }
+}
