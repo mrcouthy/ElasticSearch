@@ -60,4 +60,19 @@ GET my_blog/post/1?fields=user_id
 GET my_blog/post/1
 
 DELETE  my_blog
+
+POST _aliases
+{
+    "actions": [
+       {
+          "add": {
+             "index": "my_blog",
+             "alias": "alias1"
+          }
+       }
+    ]
+    
+}
+
+GET alias1/post/1
  
