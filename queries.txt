@@ -79,3 +79,21 @@ GET my_blog/_search
     }
 }
 }}
+
+GET my_blog/_search 
+{
+    "query": {
+        "filtered": {
+            "query": {
+            "match": {
+               "post_text": "blog"
+            }
+            }, 
+           "filter": {
+               "term": {
+                  "user_id":"1"
+               }
+            }
+        }
+    }
+}
