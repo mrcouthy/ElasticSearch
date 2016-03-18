@@ -1,0 +1,1 @@
+GET my_blog/post/AVOINHGkxpLh2aty1u5c/_termvectors?fields=post_text
